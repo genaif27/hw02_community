@@ -8,7 +8,7 @@
     <!-- Сайт готов работать с мобильными устройствами -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Загружаем фав-иконки -->
-    <link rel="icon" href= "{% static 'img/fav/fav.ico' %}" type="image">
+    <link rel="icon" hsizes="30x30" ref= "{% static 'img/fav/fav.ico' %}" >
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
@@ -20,8 +20,6 @@
   </head>
   <body>
     <header>
-      <!-- Это тег шаблонизатора include, сюда будет включён код
-      из файла includes/header.html -->
       {% include 'includes/header.html' %}
     </header>
     
@@ -32,8 +30,6 @@
     </main>
    
     <footer class ="border-top text-center py-3">
-     <!-- Это тег шаблонизатора include, сюда будет включён код
-     из файла includes/footer.html -->
      {% include 'includes/footer.html' %}  
     </footer>
   </body>
