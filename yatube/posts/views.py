@@ -1,6 +1,6 @@
-from re import template
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
+
 
 def index(request):
     template = 'posts/index.html'
@@ -9,6 +9,7 @@ def index(request):
         'title': title,
     }
     return render(request, template, contex)
+
     
 def group_list(request, slug):
     template = 'posts/group_list.html'

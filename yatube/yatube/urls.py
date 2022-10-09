@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from posts import views
+# from posts import views
 
 urlpatterns = [
     path('', include('posts.urls', namespace='posts')),
