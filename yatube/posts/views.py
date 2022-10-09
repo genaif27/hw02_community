@@ -10,7 +10,7 @@ def index(request):
     }
     return render(request, template, contex)
 
-    
+
 def group_list(request, slug):
     template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
