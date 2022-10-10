@@ -4,11 +4,11 @@ from .models import Post, Group
 
 def index(request):
     template = 'posts/index.html'
-    title = 'Это главная страница проекта Yatube'
-    contex = {
-        'title': title,
+    latest_posts = Post.objects.order_by("-pub_date")[:12]
+    context = {
+        'posts': latest_posts,
     }
-    return render(request, template, contex)
+    return render(request, template, context)
 
 
 def group_list(request, slug):
@@ -21,4 +21,3 @@ def group_list(request, slug):
         'posts': posts,
     }
     return render(request, template, context)
-    # return HttpResponse ('втоорая страница')
