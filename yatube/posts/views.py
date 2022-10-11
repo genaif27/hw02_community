@@ -4,9 +4,9 @@ from .models import Post, Group
 
 def index(request):
     
-    latest_posts = Post.objects.all()
+    post = Post.objects.order_by('-pub_date')[:10]
     context = {
-        'posts': latest_posts,
+        'posts': post,
     }
     return render(request, 'posts/index.html', context)
 
@@ -14,7 +14,7 @@ def index(request):
 def group_list(request, slug):
     template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.all()[:10]
+    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
     # posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
     # В словаре context отправляем информацию в шаблон
     context = {
