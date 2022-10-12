@@ -27,3 +27,6 @@ class Post(models.Model):
         on_delete=models.SET_NULL,
         related_name='posts'
     )
+
+    # def__str__(self):
+    #     return self.text
